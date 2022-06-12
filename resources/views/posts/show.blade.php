@@ -22,7 +22,9 @@
             <p>{{ $post->content }}</p>
         </article>
 
-        <a href="/"><<</a>
+        <a href="/"> Inicio </a>
+        <br>
+        <a href="/posts/{{ $post->id }}/edit"> Editar </a>
     </div>
 
 
