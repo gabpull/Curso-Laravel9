@@ -18,7 +18,8 @@
 <body>
     
     <div class="containerform">
-        <form action="/posts/{{ $post->id }}" method="POST">
+        
+        <form action="/posts/{{ $post->id }}" method="POST" style="display: inline-block">
             @csrf
             @method('PATCH')
             <div class="mb-3">
@@ -36,9 +37,8 @@
             </div>
             <button type="submit" class="btn btn-primary">Actualizar</button>
         </form>
-        <a href="/"><< Inicio </a>
-        <br>
-        <a href="/posts/{{ $post->id }}"><< cancelar </a>
+        <a href="/" class="asd">Inicio</a>
+        <a href="/posts/{{ $post->id }}" class="asd">Cancelar</a>
     </div>
 
 
