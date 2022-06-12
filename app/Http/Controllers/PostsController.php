@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
@@ -23,7 +24,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -34,7 +35,16 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /* $post = new Post;
+        $post->title = $request->input('title');
+        $post->excerpt = $request->input('excerpt');
+        $post->content = $request->input('content');
+        
+        $post->save(); */
+
+        Post::create($request->all());
+
+        return redirect('/');
     }
 
     /**
@@ -43,9 +53,11 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        //
+        //$post = Post::findOrFail($id);
+        //return view('posts.show')->with(['post' => $post]);
+        return view('posts.show')->with(['post' => $post]);
     }
 
     /**
