@@ -13,15 +13,16 @@
 </head>
 
 <body>
+    <div id="app">
 
-    @include('layouts.navbar')
+        @include('layouts.navbar')
 
-    {{ $slot }}
-
-
-    @include('layouts.footer')
+        {{ $slot }}
 
 
+        @include('layouts.footer')
+
+    </div>
 
 
 </body>
