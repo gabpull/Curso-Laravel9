@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::view('/layout', 'layouts.app');
 Route::get('/', [HomeController::class, 'show']);
 
 Route::controller(PostsController::class)->group(function () {

@@ -1,29 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
-    <title>Editar posts</title>
-    <link rel="stylesheet" href="/css/style.css">
-
-
-</head>
-
-<body>
+@section('content')
     
-    <div class="containerform">
+    <div class=" shadow-md sm:rounded-lg w-1/2 mx-auto">
         
         <form action="/posts/{{ $post->id }}" method="POST" style="display: inline-block">
             @csrf
             @method('PATCH')
             <div class="mb-3">
-                <label>Título</label>
+                <label class="text-xl">Título</label>
                 <input type="text" class="form-control" name="title" value="{{ $post->title }}">
             </div>
             <div class="mb-3">
@@ -42,9 +27,5 @@
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-    </script>
-</body>
+    @endsection
 
-</html>
